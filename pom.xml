@@ -167,6 +167,16 @@
       </roles>
       <timezone>Australia/Melbourne</timezone>
     </developer>
+    <developer>
+      <id>skygo</id>
+      <name>Eric Barboni</name>
+      <email>skygo@apache.org</email>
+      <organization>IRIT</organization>
+      <roles>
+        <role>PMC Member</role>
+      </roles>
+      <timezone>Europe/Paris</timezone>
+    </developer>
     <!--Committers-->
     <developer>
       <id>dennisl</id>
@@ -214,17 +224,7 @@
         <role>Committer</role>
       </roles>
       <timezone>+1</timezone>
-    </developer>
-    <developer>
-      <id>skygo</id>
-      <name>Eric Barboni</name>
-      <email>skygo@apache.org</email>
-      <organization>ASF</organization>
-      <roles>
-        <role>Committer</role>
-      </roles>
-      <timezone>+1</timezone>
-    </developer>
+    </developer>    
     <developer>
       <id>alecharp</id>
       <name>Adrien Lecharpentier</name>
