@@ -112,12 +112,24 @@
 
   <!-- Developers listed by PMC Chair, PMC, Committers, Contributors, Emeritus all alphabetical-->
   <developers>
+
+    <developer>
+      <id>olamy</id>
+      <name>Olivier Lamy</name>
+      <email>olamy@apache.org</email>
+      <organization>Ecetera.com.au</organization>
+      <roles>
+        <role>PMC Chair</role>
+      </roles>
+      <timezone>Australia/Melbourne</timezone>
+    </developer>
+
     <developer>
       <id>oching</id>
       <name>Maria Odea B. Ching</name>
       <email>oching@apache.org</email>
       <roles>
-        <role>PMC Chair</role>
+        <role>PMC Member</role>
       </roles>
       <timezone>+8</timezone>
     </developer>
@@ -160,16 +172,7 @@
       </roles>
       <timezone>+1</timezone>
     </developer>
-    <developer>
-      <id>olamy</id>
-      <name>Olivier Lamy</name>
-      <email>olamy@apache.org</email>
-      <organization>Ecetera.com.au</organization>
-      <roles>
-        <role>PMC Member</role>
-      </roles>
-      <timezone>Australia/Melbourne</timezone>
-    </developer>
+
     <developer>
       <id>skygo</id>
       <name>Eric Barboni</name>
