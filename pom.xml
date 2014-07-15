@@ -241,7 +241,16 @@
       </roles>
       <timezone>+1</timezone>
     </developer>
-    
+    <developer>
+      <id>svogt</id>
+      <name>Sascha Vogt</name>
+      <email>svogt@apache.org</email>
+      <roles>
+        <role>Committer</role>
+      </roles>
+      <timezone>Europe/Berlin</timezone>
+    </developer>
+
     <!-- Emeritus Committers -->
 
     <developer>
