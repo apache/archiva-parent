@@ -973,7 +973,7 @@
           <plugin>
             <groupId>com.ning.maven.plugins</groupId>
             <artifactId>maven-duplicate-finder-plugin</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.9</version>
             <executions>
               <execution>
                 <phase>process-test-resources</phase>
