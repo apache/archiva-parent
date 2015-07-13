@@ -29,7 +29,7 @@
   <googleAnalyticsAccountId>UA-140879-5</googleAnalyticsAccountId>
   <bannerRight>
     <name>Apache Software Foundation</name>
-    <src>http://www.apache.org/images/asf_logo_wide.png</src>
+    <src>https://www.apache.org/images/asf_logo_wide.png</src>
     <href>http://www.apache.org/</href>
   </bannerRight>
   <publishDate format="dd MMM yyyy" position="right" />
