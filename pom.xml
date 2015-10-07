@@ -90,7 +90,7 @@
 
     <jacksonVersion>2.3.0</jacksonVersion>
     <enunciate.docsDir />
-    <enunciate.version>1.29</enunciate.version>
+    <enunciate.version>2.0.0</enunciate.version>
     <enunciate.debug>false</enunciate.debug>
 
     <compiler.source>1.7</compiler.source>
@@ -941,21 +941,11 @@
         </file>
       </activation>
 
-      <dependencies>
-
-        <dependency>
-          <groupId>org.codehaus.enunciate</groupId>
-          <artifactId>enunciate-core</artifactId>
-          <scope>provided</scope>
-          <version>${enunciate.version}</version>
-        </dependency>
-
-      </dependencies>
       <build>
         <plugins>
           <plugin>
-            <groupId>org.codehaus.enunciate</groupId>
-            <artifactId>maven-enunciate-plugin</artifactId>
+            <groupId>com.webcohesion.enunciate</groupId>
+            <artifactId>enunciate-maven-plugin</artifactId>
             <version>${enunciate.version}</version>
             <executions>
               <execution>
@@ -971,13 +961,6 @@
               <configFile>src/enunciate/enunciate.xml</configFile>
               <compileDebug>${enunciate.debug}</compileDebug>
             </configuration>
-            <dependencies>
-              <dependency>
-                <groupId>org.codehaus.enunciate</groupId>
-                <artifactId>enunciate-docs</artifactId>
-                <version>${enunciate.version}</version>
-              </dependency>
-            </dependencies>
           </plugin>
         </plugins>
       </build>
