@@ -219,6 +219,15 @@
       </roles>
     </developer>
     <developer>
+      <id>martin_s</id>
+      <name>Martin Stockhammer</name>
+      <email>martin_s@apache.org</email>
+      <roles>
+        <role>Committer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+    <developer>
       <id>mbaclay</id>
       <name>Marecor M. Baclay</name>
       <email>mbaclay@apache.org</email>
