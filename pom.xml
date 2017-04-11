@@ -198,6 +198,15 @@
       </roles>
       <timezone>Europe/Paris</timezone>
     </developer>
+    <developer>
+      <id>martin_s</id>
+      <name>Martin Stockhammer</name>
+      <email>martin_s@apache.org</email>
+      <roles>
+        <role>PMC Member</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
     <!--Committers-->
     <developer>
       <id>dennisl</id>
@@ -217,15 +226,6 @@
       <roles>
         <role>Committer</role>
       </roles>
-    </developer>
-    <developer>
-      <id>martin_s</id>
-      <name>Martin Stockhammer</name>
-      <email>martin_s@apache.org</email>
-      <roles>
-        <role>Committer</role>
-      </roles>
-      <timezone>+1</timezone>
     </developer>
     <developer>
       <id>mbaclay</id>
