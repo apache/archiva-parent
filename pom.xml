@@ -870,6 +870,7 @@
             <configuration>
               <passphrase>${gpg.passphrase}</passphrase>
               <useAgent>${gpg.useagent}</useAgent>
+              <keyname>${gpg.keyname}</keyname>
             </configuration>
             <executions>
               <execution>
