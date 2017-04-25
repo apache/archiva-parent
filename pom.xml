@@ -56,10 +56,6 @@
     </snapshotRepository>
   </distributionManagement>
 
-  <prerequisites>
-    <maven>3.0.5</maven>
-  </prerequisites>
-
   <properties>
     <snapshotsDeployUrl>https://archiva-repository.apache.org/archiva/repository/snapshots</snapshotsDeployUrl>
     <snapshotsDeployId>archiva-repository.snapshots</snapshotsDeployId>
