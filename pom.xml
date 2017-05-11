@@ -906,6 +906,7 @@
             <artifactId>maven-deploy-plugin</artifactId>
             <configuration>
               <updateReleaseInfo>true</updateReleaseInfo>
+              <retryFailedDeploymentCount>5</retryFailedDeploymentCount>
             </configuration>
           </plugin>
         </plugins>
