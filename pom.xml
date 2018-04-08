@@ -57,6 +57,7 @@
   </distributionManagement>
 
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <snapshotsDeployUrl>https://archiva-repository.apache.org/archiva/repository/snapshots</snapshotsDeployUrl>
     <snapshotsDeployId>archiva-repository.snapshots</snapshotsDeployId>
     <releaseDeployUrl>https://archiva-repository.apache.org/archiva/repository/archiva-releases-stage/</releaseDeployUrl>
@@ -86,7 +87,7 @@
 
     <jacksonVersion>2.3.0</jacksonVersion>
     <enunciate.docsDir />
-    <enunciate.version>2.9.1</enunciate.version>
+    <enunciate.version>2.10.1</enunciate.version>
     <enunciate.debug>false</enunciate.debug>
 
     <javaVersion>8</javaVersion>
