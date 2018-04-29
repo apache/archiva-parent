@@ -4,6 +4,7 @@ def buildMvn = 'Maven 3.5.2'
 def deploySettings = 'DefaultMavenSettingsProvider.1331204114925'
 
 node(labels) {
+
     try {
         stage('Checkout') {
             checkout scm
