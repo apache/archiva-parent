@@ -17,10 +17,10 @@ node(labels) {
         stage('Build') {
             timeout(20) {
                 withMaven(maven: buildMvn, jdk: buildJdk,
-                        mavenSettingsConfig: deploySettings
+                        mavenSettingsConfig: deploySettings,
+                        mavenLocalRepo: ".repository"
                 )
                         {
-                            sh "rm -rf .repository"
                             // Run test phase / ignore test failures
                             sh "mvn -B -U -e -fae clean install"
                         }
@@ -40,7 +40,8 @@ node(labels) {
         stage('Publish') {
             timeout(10) {
                 withMaven(maven: buildMvn, jdk: buildJdk,
-                        mavenSettingsConfig: deploySettings
+                        mavenSettingsConfig: deploySettings,
+                        mavenLocalRepo: ".repository"
                 )
                         {
                             sh "mvn -B -U -e -fae deploy"
