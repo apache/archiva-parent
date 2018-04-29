@@ -9,7 +9,7 @@ node(labels) {
             checkout scm
         }
     } catch (Exception e) {
-        //notifyBuild("Checkout Failure")
+        notifyBuild("Checkout Failure")
         throw e
     }
 
@@ -17,8 +17,7 @@ node(labels) {
         stage('Build') {
             timeout(20) {
                 withMaven(maven: buildMvn, jdk: buildJdk,
-                        mavenSettingsConfig: deploySettings,
-                        mavenLocalRepo: ".repository"
+                        mavenSettingsConfig: deploySettings
                 )
                         {
                             sh "rm -rf .repository"
@@ -39,10 +38,9 @@ node(labels) {
 
     try {
         stage('Publish') {
-            timeout(120) {
+            timeout(10) {
                 withMaven(maven: buildMvn, jdk: buildJdk,
-                        mavenSettingsConfig: deploySettings,
-                        mavenLocalRepo: ".repository"
+                        mavenSettingsConfig: deploySettings
                 )
                         {
                             sh "mvn -B -U -e -fae deploy"
