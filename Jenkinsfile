@@ -1,69 +1,73 @@
-def labels = 'ubuntu'
-def buildJdk = 'JDK 1.8 (latest)'
-def buildMvn = 'Maven 3.5.2'
-def deploySettings = 'DefaultMavenSettingsProvider.1331204114925'
+LABEL = 'ubuntu'
+buildJdk = 'JDK 1.8 (latest)'
+buildMvn = 'Maven 3.5.2'
+deploySettings = 'DefaultMavenSettingsProvider.1331204114925'
 
-node(labels) {
 
-    try {
-        stage('Checkout') {
-            checkout scm
-        }
-    } catch (Exception e) {
-        notifyBuild("Checkout Failure")
-        throw e
+pipeline {
+    agent {
+        label "${LABEL}"
     }
+    stages {
 
-    try {
-        stage('Build') {
-            timeout(20) {
-                withMaven(maven: buildMvn, jdk: buildJdk,
-                        mavenSettingsConfig: deploySettings,
-                        mavenLocalRepo: ".repository"
-                )
-                        {
-                            // Run test phase / ignore test failures
-                            sh "mvn -B -U -e -fae clean install"
-                        }
-                // Report failures in the jenkins UI
-                //step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+            stage('Checkout') {
+                steps {
+                    checkout scm
+                }
+                post {
+                    failure {
+                        notifyBuild("Checkout failure (${currentBuild.currentResult})")
+                    }
+                }
             }
-            if (isUnstable()) {
-                //notifyBuild("Unstable / Test Errors")
+
+
+            stage('BuildAndDeploy') {
+                steps {
+                    timeout(20) {
+                        withMaven(maven: buildMvn, jdk: buildJdk,
+                                mavenSettingsConfig: deploySettings,
+                                mavenLocalRepo: ".repository",
+                                options: [concordionPublisher(disabled: true), dependenciesFingerprintPublisher(disabled: true),
+                                          findbugsPublisher(disabled: true), artifactsPublisher(disabled: true),
+                                          invokerPublisher(disabled: true), jgivenPublisher(disabled: true),
+                                          junitPublisher(disabled: true, ignoreAttachments: false),
+                                          openTasksPublisher(disabled: true), pipelineGraphPublisher(disabled: true)]
+                        )
+                                {
+                                    // Run test phase / ignore test failures
+                                    sh "mvn -B -U -e -fae clean deploy"
+                                }
+                        // Report failures in the jenkins UI
+                        //step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+                    }
+                }
+                post {
+                    success {
+                        archiveArtifacts '**/target/*.pom'
+                    }
+                    failure {
+                        notifyBuild("Failure in BuildAndDeploy stage")
+                    }
+                }
+            }
+    }
+    post {
+        unstable {
+            notifyBuild("Unstable Build")
+        }
+        always {
+            cleanWs deleteDirs: true, notFailBuild: true, patterns: [[pattern: '.repository', type: 'EXCLUDE']]
+        }
+        success {
+            script {
+                def previousResult = currentBuild.previousBuild?.result
+                if (previousResult && !currentBuild.resultIsWorseOrEqualTo(previousResult)) {
+                    notifyBuild("Fixed")
+                }
             }
         }
-    } catch (Exception e) {
-        notifyBuild("Test Failure")
-        throw e
     }
-
-    try {
-        stage('Publish') {
-            timeout(10) {
-                withMaven(maven: buildMvn, jdk: buildJdk,
-                        mavenSettingsConfig: deploySettings,
-                        mavenLocalRepo: ".repository"
-                )
-                        {
-                            sh "mvn -B -U -e -fae deploy"
-                        }
-                // Report failures in the jenkins UI
-                //step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
-            }
-            if (isUnstable()) {
-                //notifyBuild("Unstable / Test Errors")
-            }
-        }
-    } catch (Exception e) {
-        notifyBuild("Publish Failure")
-        throw e
-    }
-}
-
-// Test if the Jenkins Pipeline or Step has marked the
-// current build as unstable
-def isUnstable() {
-    return currentBuild.result == "UNSTABLE"
 }
 
 // Send a notification about the build status
@@ -72,7 +76,7 @@ def notifyBuild(String buildStatus) {
     buildStatus = buildStatus ?: "UNKNOWN"
 
     def email = "notifications@archiva.apache.org"
-    def summary = "${env.JOB_NAME}#${env.BUILD_NUMBER} - ${buildStatus}"
+    def summary = "${env.JOB_NAME}#${env.BUILD_NUMBER} - ${buildStatus} - ${currentBuild?.currentResult}"
     def detail = """<h4>Job: <a href='${env.JOB_URL}'>${env.JOB_NAME}</a> [#${env.BUILD_NUMBER}]</h4>
   <p><b>${buildStatus}</b></p>
   <table>
@@ -90,4 +94,4 @@ def notifyBuild(String buildStatus) {
     )
 }
 
-// vim: et:ts=2:sw=2:ft=groovy
+// vim: et:ts=4:sw=4:ft=groovy
