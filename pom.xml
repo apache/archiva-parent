@@ -87,7 +87,7 @@
 
     <jacksonVersion>2.3.0</jacksonVersion>
     <enunciate.docsDir />
-    <enunciate.version>2.10.1</enunciate.version>
+    <enunciate.version>2.11.1</enunciate.version>
     <enunciate.debug>false</enunciate.debug>
 
     <javaVersion>8</javaVersion>
@@ -873,7 +873,7 @@
                   <descriptorRefs>
                     <descriptorRef>${sourceReleaseAssemblyDescriptor}</descriptorRef>
                   </descriptorRefs>
-                  <tarLongFileFormat>gnu</tarLongFileFormat>
+                  <tarLongFileMode>gnu</tarLongFileMode>
                 </configuration>
               </execution>
             </executions>
