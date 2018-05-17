@@ -96,9 +96,9 @@ pipeline {
         unstable {
             notifyBuild("Unstable Build")
         }
-        always {
-            // cleanWs deleteDirs: true, notFailBuild: true, patterns: [[pattern: '.repository', type: 'EXCLUDE'],[pattern: '.repository/**', type: 'EXCLUDE']]
-        }
+//        always {
+//            cleanWs deleteDirs: true, notFailBuild: true, patterns: [[pattern: '.repository', type: 'EXCLUDE'],[pattern: '.repository/**', type: 'EXCLUDE']]
+//        }
         success {
             script {
                 def previousResult = currentBuild.previousBuild?.result
