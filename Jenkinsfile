@@ -45,7 +45,7 @@ pipeline {
             parallel {
                 stage('JDK9') {
                     steps {
-                        ws('JDK9') {
+                        ws("${env.JOB_NAME}-JDK9") {
                             checkout scm
                             timeout(20) {
                                 withMaven(maven: buildMvn, jdk: buildJdk9,
@@ -67,7 +67,7 @@ pipeline {
                 }
                 stage('JDK10') {
                     steps {
-                        ws('JDK10') {
+                        ws("${env.JOB_NAME}-JDK10") {
                             checkout scm
                             timeout(20) {
                                 withMaven(maven: buildMvn, jdk: buildJdk9,
@@ -97,7 +97,7 @@ pipeline {
             notifyBuild("Unstable Build")
         }
         always {
-            cleanWs deleteDirs: true, notFailBuild: true, patterns: [[pattern: '.repository', type: 'EXCLUDE'],[pattern: '.repository/**', type: 'EXCLUDE']]
+            // cleanWs deleteDirs: true, notFailBuild: true, patterns: [[pattern: '.repository', type: 'EXCLUDE'],[pattern: '.repository/**', type: 'EXCLUDE']]
         }
         success {
             script {
