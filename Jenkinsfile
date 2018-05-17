@@ -1,5 +1,7 @@
 LABEL = 'ubuntu'
 buildJdk = 'JDK 1.8 (latest)'
+buildJdk9 = 'JDK 1.9 (latest)'
+buildJdk10 = 'JDK 10 (latest)'
 buildMvn = 'Maven 3.5.2'
 deploySettings = 'DefaultMavenSettingsProvider.1331204114925'
 
@@ -9,17 +11,6 @@ pipeline {
         label "${LABEL}"
     }
     stages {
-
-            stage('Checkout') {
-                steps {
-                    checkout scm
-                }
-                post {
-                    failure {
-                        notifyBuild("Checkout failure (${currentBuild.currentResult})")
-                    }
-                }
-            }
 
 
             stage('BuildAndDeploy') {
@@ -51,6 +42,53 @@ pipeline {
                     }
                 }
             }
+
+        parallel {
+            stage('JDK9') {
+                steps {
+                    ws('JDK9') {
+                        timeout(20) {
+                            withMaven(maven: buildMvn, jdk: buildJdk9,
+                                    mavenSettingsConfig: deploySettings,
+                                    mavenLocalRepo: ".repository",
+                                    options: [concordionPublisher(disabled: true), dependenciesFingerprintPublisher(disabled: true),
+                                              findbugsPublisher(disabled: true), artifactsPublisher(disabled: true),
+                                              invokerPublisher(disabled: true), jgivenPublisher(disabled: true),
+                                              junitPublisher(disabled: true, ignoreAttachments: false),
+                                              openTasksPublisher(disabled: true), pipelineGraphPublisher(disabled: true)]
+                            )
+                                    {
+                                        // Run test phase / ignore test failures
+                                        sh "mvn -B -U -e -fae clean verify"
+                                    }
+                        }
+                    }
+                }
+            }
+            stage('JDK10') {
+                steps {
+                    ws('JDK10') {
+                        timeout(20) {
+                            withMaven(maven: buildMvn, jdk: buildJdk9,
+                                    mavenSettingsConfig: deploySettings,
+                                    mavenLocalRepo: ".repository",
+                                    options: [concordionPublisher(disabled: true), dependenciesFingerprintPublisher(disabled: true),
+                                              findbugsPublisher(disabled: true), artifactsPublisher(disabled: true),
+                                              invokerPublisher(disabled: true), jgivenPublisher(disabled: true),
+                                              junitPublisher(disabled: true, ignoreAttachments: false),
+                                              openTasksPublisher(disabled: true), pipelineGraphPublisher(disabled: true)]
+                            )
+                                    {
+                                        // Run test phase / ignore test failures
+                                        sh "mvn -B -U -e -fae clean verify"
+                                    }
+
+                        }
+                    }
+                }
+            }
+
+        }
     }
     post {
         unstable {
