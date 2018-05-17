@@ -59,7 +59,7 @@ pipeline {
                                 )
                                         {
                                             // Run test phase / ignore test failures
-                                            sh "mvn -B -U -e -fae clean verify"
+                                            sh "mvn -B -U -e -fae clean install"
                                         }
                             }
                         }
@@ -81,7 +81,7 @@ pipeline {
                                 )
                                         {
                                             // Run test phase / ignore test failures
-                                            sh "mvn -B -U -e -fae clean verify"
+                                            sh "mvn -B -U -e -fae clean install"
                                         }
 
                             }
