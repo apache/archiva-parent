@@ -44,7 +44,7 @@ pipeline {
                 }
                 post {
                     success {
-                        archiveArtifacts '**/target/*-site.xml','pom.xml'
+                        archiveArtifacts '**/target/*-site.xml,pom.xml'
                     }
                     failure {
                         notifyBuild("Failure in BuildAndDeploy stage")
