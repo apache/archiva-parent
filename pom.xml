@@ -645,6 +645,7 @@
           <extensions>true</extensions>
           <configuration>
             <instructions>
+              <!--suppress UnresolvedMavenProperty -->
               <_versionpolicy>[$(version;==;$(@)),$(version;+;$(@)))</_versionpolicy>
             </instructions>
           </configuration>
@@ -883,8 +884,10 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
             <configuration>
+              <!--suppress UnresolvedMavenProperty -->
               <passphrase>${gpg.passphrase}</passphrase>
               <useAgent>${gpg.useagent}</useAgent>
+              <!--suppress UnresolvedMavenProperty -->
               <keyname>${gpg.keyname}</keyname>
             </configuration>
             <executions>
@@ -985,7 +988,6 @@
             <configuration>
               <docsDir>${enunciate.docsDir}</docsDir>
               <configFile>src/enunciate/enunciate.xml</configFile>
-              <compileDebug>${enunciate.debug}</compileDebug>
             </configuration>
           </plugin>
         </plugins>
