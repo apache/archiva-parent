@@ -81,7 +81,7 @@
     <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
     <checkstyleVersion>2.13</checkstyleVersion>
     <jxrVersion>2.5</jxrVersion>
-    <javadocPluginVersion>2.10.1</javadocPluginVersion>
+    <javadocPluginVersion>3.0.1</javadocPluginVersion>
 
     <plexusUtilsPluginsVersion>3.0.15</plexusUtilsPluginsVersion>
 
@@ -921,6 +921,9 @@
                 </goals>
               </execution>
             </executions>
+            <configuration>
+              <doclint>none</doclint>
+            </configuration>
           </plugin>
           <!-- We want to deploy the artifact to a staging location for perusal -->
           <plugin>
