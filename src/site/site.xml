@@ -40,10 +40,6 @@
     <version>1.6</version>
   </skin>
   <body>
-    <!-- TODO: inherited breadcrumbs, head, link menu -->
-    <breadcrumbs>
-      <item name="Apache" href="http://www.apache.org/"/>
-    </breadcrumbs>
     <menu ref="reports" inherit="bottom"/>
   </body>
 </project>

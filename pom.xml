@@ -39,7 +39,7 @@
       repositories, including administration, artifact handling,
       browsing and searching.
   </description>
-  <url>http://archiva.apache.org/</url>
+  <url>https://archiva.apache.org/</url>
   <inceptionYear>2006</inceptionYear>
 
   <distributionManagement>
@@ -64,7 +64,7 @@
     <releaseDeployId>archiva-repository.releases</releaseDeployId>
     <gpg.useagent>true</gpg.useagent>
 
-    <surefireVersion>2.20</surefireVersion>
+    <surefireVersion>2.22.1</surefireVersion>
     <sonar.plugin.version>2.5</sonar.plugin.version>
 
     <!-- svnsubpub configuration -->
@@ -78,7 +78,7 @@
 
 
     <!-- reporting plugins versions -->
-    <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
+    <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
     <checkstyleVersion>2.13</checkstyleVersion>
     <jxrVersion>2.5</jxrVersion>
     <javadocPluginVersion>3.0.1</javadocPluginVersion>
