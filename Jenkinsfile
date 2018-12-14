@@ -1,7 +1,5 @@
 LABEL = 'ubuntu'
 buildJdk = 'JDK 1.8 (latest)'
-buildJdk9 = 'JDK 1.9 (latest)'
-buildJdk10 = 'JDK 10 (latest)'
 buildMvn = 'Maven 3.5.2'
 deploySettings = 'archiva-uid-jenkins'
 
@@ -16,19 +14,14 @@ pipeline {
                 timeout(20) {
                     withMaven(maven: buildMvn, jdk: buildJdk,
                             mavenSettingsConfig: deploySettings,
+                              publisherStrategy: 'EXPLICIT',
                             mavenLocalRepo: ".repository",
-                            options: [concordionPublisher(disabled: true), dependenciesFingerprintPublisher(disabled: true),
-                                      findbugsPublisher(disabled: true), artifactsPublisher(disabled: true),
-                                      invokerPublisher(disabled: true), jgivenPublisher(disabled: true),
-                                      junitPublisher(disabled: true, ignoreAttachments: false),
-                                      openTasksPublisher(disabled: true), pipelineGraphPublisher(disabled: true)]
+                            options: [pipelineGraphPublisher(disabled: false)]
                     )
                             {
                                 // Run test phase / ignore test failures
                                 sh "mvn -B -U -e -fae clean deploy"
                             }
-                    // Report failures in the jenkins UI
-                    //step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
                 }
             }
             post {
@@ -38,57 +31,6 @@ pipeline {
                 failure {
                     notifyBuild("Failure in BuildAndDeploy stage")
                 }
-            }
-        }
-
-        stage('OtherJdks') {
-            parallel {
-                stage('JDK9') {
-                    steps {
-                        ws("${env.JOB_NAME}-JDK9") {
-                            checkout scm
-                            timeout(20) {
-                                withMaven(maven: buildMvn, jdk: buildJdk9,
-                                        mavenSettingsConfig: deploySettings,
-                                        mavenLocalRepo: ".repository",
-                                        options: [concordionPublisher(disabled: true), dependenciesFingerprintPublisher(disabled: true),
-                                                  findbugsPublisher(disabled: true), artifactsPublisher(disabled: true),
-                                                  invokerPublisher(disabled: true), jgivenPublisher(disabled: true),
-                                                  junitPublisher(disabled: true, ignoreAttachments: false),
-                                                  openTasksPublisher(disabled: true), pipelineGraphPublisher(disabled: true)]
-                                )
-                                        {
-                                            // Run test phase / ignore test failures
-                                            sh "mvn -B -U -e -fae clean install"
-                                        }
-                            }
-                        }
-                    }
-                }
-                stage('JDK10') {
-                    steps {
-                        ws("${env.JOB_NAME}-JDK10") {
-                            checkout scm
-                            timeout(20) {
-                                withMaven(maven: buildMvn, jdk: buildJdk9,
-                                        mavenSettingsConfig: deploySettings,
-                                        mavenLocalRepo: ".repository",
-                                        options: [concordionPublisher(disabled: true), dependenciesFingerprintPublisher(disabled: true),
-                                                  findbugsPublisher(disabled: true), artifactsPublisher(disabled: true),
-                                                  invokerPublisher(disabled: true), jgivenPublisher(disabled: true),
-                                                  junitPublisher(disabled: true, ignoreAttachments: false),
-                                                  openTasksPublisher(disabled: true), pipelineGraphPublisher(disabled: true)]
-                                )
-                                        {
-                                            // Run test phase / ignore test failures
-                                            sh "mvn -B -U -e -fae clean install"
-                                        }
-
-                            }
-                        }
-                    }
-                }
-
             }
         }
     }
