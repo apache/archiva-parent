@@ -124,7 +124,7 @@
       <roles>
         <role>PMC Chair</role>
       </roles>
-      <timezone>Australia/Melbourne</timezone>
+      <timezone>Australia/Brisbane</timezone>
     </developer>
 
     <developer>
@@ -653,16 +653,15 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.5.3</version>
+          <version>3.1.0</version>
           <configuration>
-            <useJvmChmod>true</useJvmChmod>
             <recompressZippedFiles>true</recompressZippedFiles>
           </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>2.6.1</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -763,7 +762,7 @@
         <plugin>
           <groupId>org.apache.rat</groupId>
           <artifactId>apache-rat-plugin</artifactId>
-          <version>0.11</version>
+          <version>0.13</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
