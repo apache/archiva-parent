@@ -76,6 +76,7 @@
     <maven-scm-provider-svnjava.version>2.1.2</maven-scm-provider-svnjava.version>
     <svnkit.version>1.8.9</svnkit.version>
 
+    <jetty.version>9.4.14.v20181114</jetty.version>
 
     <!-- reporting plugins versions -->
     <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
