@@ -97,6 +97,8 @@
     <compiler.source>1.${javaVersion}</compiler.source>
     <compiler.target>1.${javaVersion}</compiler.target>
 
+    <commons-beanutils.version>1.9.3</commons-beanutils.version>
+
   </properties>
 
 
@@ -932,7 +934,6 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-deploy-plugin</artifactId>
             <configuration>
-              <updateReleaseInfo>true</updateReleaseInfo>
               <retryFailedDeploymentCount>5</retryFailedDeploymentCount>
             </configuration>
           </plugin>
