@@ -87,6 +87,8 @@
     <commons.codec.version>1.13</commons.codec.version>
     <commons.configuration.version>1.10</commons.configuration.version>
     <commons.text.version>1.8</commons.text.version>
+    <commons.collections.3.version>3.2.2</commons.collections.3.version>
+    <commons.beanutils.version>1.9.4</commons.beanutils.version>
 
     <!-- junit -->
     <junit.platform.version>1.5.2</junit.platform.version>
