@@ -86,6 +86,7 @@
     <commons.lang3.version>3.9</commons.lang3.version>
     <commons.codec.version>1.13</commons.codec.version>
     <commons.configuration.version>1.10</commons.configuration.version>
+    <commons.text.version>1.8</commons.text.version>
 
     <!-- junit -->
     <junit.platform.version>1.5.2</junit.platform.version>
