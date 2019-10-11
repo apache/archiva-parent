@@ -67,6 +67,12 @@
     <surefireVersion>3.0.0-M3</surefireVersion>
     <sonar.plugin.version>2.5</sonar.plugin.version>
 
+    <!-- redback components versions -->
+    <redback.comp.spring-cache.version>2.3-SNAPSHOT</redback.comp.spring-cache.version>
+    <redback.comp.expression-evaluator.version>2.2-SNAPSHOT</redback.comp.expression-evaluator.version>
+    <redback.comp.spring-apacheds.version>2.2-SNAPSHOT</redback.comp.spring-apacheds.version>
+    <redback.comp.spring-registry.version>2.5-SNAPSHOT</redback.comp.spring-registry.version>
+
     <!-- svnsubpub configuration -->
 
     <scmPubCheckoutDirectory />
