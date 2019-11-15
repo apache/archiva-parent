@@ -73,6 +73,9 @@
     <redback.comp.spring-apacheds.version>2.2-SNAPSHOT</redback.comp.spring-apacheds.version>
     <redback.comp.spring-registry.version>2.5-SNAPSHOT</redback.comp.spring-registry.version>
 
+    <!-- archiva components version -->
+    <archiva.comp.version>3.0-SNAPSHOT</archiva.comp.version>
+
     <!-- svnsubpub configuration -->
 
     <scmPubCheckoutDirectory />
