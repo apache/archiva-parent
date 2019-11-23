@@ -110,8 +110,8 @@
     <!-- reporting plugins versions -->
     <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
     <checkstyleVersion>2.13</checkstyleVersion>
-    <jxrVersion>2.5</jxrVersion>
-    <javadocPluginVersion>3.0.1</javadocPluginVersion>
+    <jxrVersion>3.0.0</jxrVersion>
+    <javadocPluginVersion>3.1.1</javadocPluginVersion>
 
     <plexusUtilsPluginsVersion>3.0.15</plexusUtilsPluginsVersion>
 
@@ -121,6 +121,7 @@
     <enunciate.debug>false</enunciate.debug>
 
     <javaVersion>8</javaVersion>
+    <javaFullVersion>1.${javaVersion}.0</javaFullVersion>
     <compiler.source>1.${javaVersion}</compiler.source>
     <compiler.target>1.${javaVersion}</compiler.target>
 
@@ -654,10 +655,23 @@
             <configuration>
               <rules>
                 <requireJavaVersion>
-                  <version>1.7.0</version>
+                  <version>[${javaFullVersion},)</version>
                 </requireJavaVersion>
               </rules>
             </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <id>attach-descriptor</id>
+            <goals>
+              <goal>attach-descriptor</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
@@ -698,7 +712,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
+          <version>3.8.1</version>
           <configuration>
             <source>${compiler.source}</source>
             <target>${compiler.target}</target>
@@ -853,23 +867,7 @@
 
 
   <profiles>
-    <profile>
-      <id>jdk9</id>
-      <activation>
-        <jdk>[1.9,)</jdk>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-              <release>${javaVersion}</release>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
+
     <profile>
       <id>release</id>
       <build>
@@ -967,33 +965,6 @@
         </plugins>
       </build>
     </profile>
-    <profile>
-      <id>maven-3</id>
-      <activation>
-        <file>
-          <!--  This employs that the basedir expression is only recognized by Maven 3.x (see MNG-2363) -->
-          <exists>${basedir}</exists>
-        </file>
-      </activation>
-      <build>
-        <!-- we need to attach the descriptor for this pom -->
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-site-plugin</artifactId>
-            <inherited>false</inherited>
-            <executions>
-              <execution>
-                <id>attach-descriptor</id>
-                <goals>
-                  <goal>attach-descriptor</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
 
     <profile>
       <id>enunciate</id>
@@ -1065,32 +1036,17 @@
             </plugin>
           </plugins>
         </pluginManagement>
-      </build>
-
-    </profile>
-
-
-    <profile>
-      <id>dup</id>
-      <build>
         <plugins>
           <plugin>
-            <groupId>com.ning.maven.plugins</groupId>
-            <artifactId>maven-duplicate-finder-plugin</artifactId>
-            <version>1.0.9</version>
-            <executions>
-              <execution>
-                <phase>process-test-resources</phase>
-                <goals>
-                  <goal>check</goal>
-                </goals>
-              </execution>
-            </executions>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <release>${javaVersion}</release>
+            </configuration>
           </plugin>
         </plugins>
       </build>
     </profile>
-
   </profiles>
 
 </project>
