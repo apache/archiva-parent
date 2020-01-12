@@ -102,6 +102,7 @@
     <javax.inject.version>1</javax.inject.version>
     <javax.persistence.version>2.2</javax.persistence.version>
     <javax.servlet.version>2.5</javax.servlet.version>
+    <javax.mail.version>1.4.7</javax.mail.version>
 
     <!-- junit -->
     <junit.platform.version>1.5.2</junit.platform.version>
@@ -115,7 +116,7 @@
 
     <plexusUtilsPluginsVersion>3.0.15</plexusUtilsPluginsVersion>
 
-    <jacksonVersion>2.3.0</jacksonVersion>
+    <jackson.version>2.9.10</jackson.version>
     <enunciate.docsDir />
     <enunciate.version>2.12.0</enunciate.version>
     <enunciate.debug>false</enunciate.debug>
