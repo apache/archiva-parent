@@ -113,7 +113,11 @@
     <junit.jupiter.version>5.5.2</junit.jupiter.version>
 
     <!-- reporting plugins versions -->
-    <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
+    <!-- As of 2020-04-18 we have to use the snapshot version for the project info reports plugin. This is only
+         used for site generation. But you have to add the snapshot repository to your ~/.m2/settings.xml:
+         https://repository.apache.org/content/groups/snapshots
+    -->
+    <maven-project-info-reports-plugin.version>3.1.0-SNAPSHOT</maven-project-info-reports-plugin.version>
     <checkstyleVersion>2.13</checkstyleVersion>
     <jxrVersion>3.0.0</jxrVersion>
     <javadocPluginVersion>3.1.1</javadocPluginVersion>
