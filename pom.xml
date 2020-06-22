@@ -19,13 +19,14 @@
   ~ under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache</artifactId>
     <version>9</version>
-    <relativePath />
+    <relativePath/>
   </parent>
 
   <groupId>org.apache.archiva</groupId>
@@ -35,9 +36,9 @@
 
   <name>Archiva Common Parent Project</name>
   <description>
-      Archiva is an application for managing one or more remote
-      repositories, including administration, artifact handling,
-      browsing and searching.
+    Archiva is an application for managing one or more remote
+    repositories, including administration, artifact handling,
+    browsing and searching.
   </description>
   <url>https://archiva.apache.org/</url>
   <inceptionYear>2006</inceptionYear>
@@ -60,7 +61,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <snapshotsDeployUrl>https://archiva-repository.apache.org/archiva/repository/snapshots</snapshotsDeployUrl>
     <snapshotsDeployId>archiva-repository.snapshots</snapshotsDeployId>
-    <releaseDeployUrl>https://archiva-repository.apache.org/archiva/repository/archiva-releases-stage/</releaseDeployUrl>
+    <releaseDeployUrl>https://archiva-repository.apache.org/archiva/repository/archiva-releases-stage/
+    </releaseDeployUrl>
     <releaseDeployId>archiva-repository.releases</releaseDeployId>
     <gpg.useagent>true</gpg.useagent>
 
@@ -118,14 +120,14 @@
          https://repository.apache.org/content/groups/snapshots
     -->
     <maven-project-info-reports-plugin.version>3.1.0-SNAPSHOT</maven-project-info-reports-plugin.version>
-    <checkstyleVersion>2.13</checkstyleVersion>
+    <checkstyleVersion>3.0.0</checkstyleVersion>
     <jxrVersion>3.0.0</jxrVersion>
     <javadocPluginVersion>3.1.1</javadocPluginVersion>
 
     <plexusUtilsPluginsVersion>3.0.15</plexusUtilsPluginsVersion>
 
     <jackson.version>2.9.10</jackson.version>
-    <enunciate.docsDir />
+    <enunciate.docsDir/>
     <enunciate.version>2.12.0</enunciate.version>
     <enunciate.debug>false</enunciate.debug>
 
@@ -695,6 +697,18 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-antrun-plugin</artifactId>
           <version>1.8</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>${checkstyleVersion}</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.maven.shared</groupId>
+              <artifactId>maven-shared-resources</artifactId>
+              <version>2</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.apache.felix</groupId>
