@@ -86,29 +86,35 @@
     <ehcache.version>2.10.6</ehcache.version>
     <hsqldb.version>2.5.0</hsqldb.version>
     <openjpa.version>2.4.1</openjpa.version>
+    <cxf.version>3.0.3</cxf.version>
+
 
     <!-- apache commons -->
     <commons.lang3.version>3.9</commons.lang3.version>
     <commons.codec.version>1.13</commons.codec.version>
     <commons.configuration.version>2.6</commons.configuration.version>
     <commons.text.version>1.8</commons.text.version>
-    <commons.collections.3.version>3.2.2</commons.collections.3.version>
     <commons.beanutils.version>1.9.4</commons.beanutils.version>
     <commons.logging.version>1.2</commons.logging.version>
     <commons.io.version>2.6</commons.io.version>
     <commons.digester.version>2.1</commons.digester.version>
-    <commons.beanutils.version>1.9.4</commons.beanutils.version>
+    <commons.collections.version>4.4</commons.collections.version>
+    <commons.fileupload.version>1.4</commons.fileupload.version>
+    <commons.collections.3.version>3.2.2</commons.collections.3.version>
+
 
     <!-- java ee APIs -->
     <javax.annotation.version>1.3.2</javax.annotation.version>
     <javax.transaction.version>1.3</javax.transaction.version>
     <javax.inject.version>1</javax.inject.version>
     <javax.persistence.version>2.2</javax.persistence.version>
-    <javax.servlet.version>2.5</javax.servlet.version>
     <javax.mail.version>1.4.7</javax.mail.version>
     <javax.jaxb.version>2.3.1</javax.jaxb.version>
     <javax.activation.version>1.1.1</javax.activation.version>
+    <javax.servlet.version>4.0.1</javax.servlet.version>
+    <javax.jaxrs.version>2.0</javax.jaxrs.version>
 
+    <xmlunit.version>2.6.3</xmlunit.version>
 
     <!-- junit -->
     <junit.platform.version>1.5.2</junit.platform.version>
