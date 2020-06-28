@@ -88,11 +88,13 @@
     <openjpa.version>3.1.1</openjpa.version>
     <cxf.version>3.0.3</cxf.version>
 
+    <apacheds.version>1.5.1</apacheds.version>
+    <apacheds.shared.version>0.9.7</apacheds.shared.version>
 
     <!-- apache commons -->
     <commons.lang3.version>3.9</commons.lang3.version>
     <commons.codec.version>1.13</commons.codec.version>
-    <commons.configuration.version>2.6</commons.configuration.version>
+    <commons.configuration.version>2.7</commons.configuration.version>
     <commons.text.version>1.8</commons.text.version>
     <commons.beanutils.version>1.9.4</commons.beanutils.version>
     <commons.logging.version>1.2</commons.logging.version>
@@ -143,7 +145,7 @@
     <compiler.target>1.${javaVersion}</compiler.target>
 
 
-    <quartz.version>2.3.1</quartz.version>
+    <quartz.version>2.3.2</quartz.version>
 
     <asciidoctor.maven.plugin.version>2.0.0-RC.1</asciidoctor.maven.plugin.version>
 
