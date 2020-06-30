@@ -86,7 +86,9 @@
     <ehcache.version>2.10.6</ehcache.version>
     <hsqldb.version>2.5.0</hsqldb.version>
     <openjpa.version>3.1.1</openjpa.version>
-    <cxf.version>3.0.3</cxf.version>
+    <cxf.version>3.3.6</cxf.version>
+    <jackson.version>2.11.0</jackson.version>
+
 
     <apacheds.version>1.5.1</apacheds.version>
     <apacheds.shared.version>0.9.7</apacheds.shared.version>
@@ -123,18 +125,13 @@
     <junit.jupiter.version>5.5.2</junit.jupiter.version>
 
     <!-- reporting plugins versions -->
-    <!-- As of 2020-04-18 we have to use the snapshot version for the project info reports plugin. This is only
-         used for site generation. But you have to add the snapshot repository to your ~/.m2/settings.xml:
-         https://repository.apache.org/content/groups/snapshots
-    -->
-    <maven-project-info-reports-plugin.version>3.1.0-SNAPSHOT</maven-project-info-reports-plugin.version>
+    <maven-project-info-reports-plugin.version>3.1.0</maven-project-info-reports-plugin.version>
     <checkstyleVersion>3.0.0</checkstyleVersion>
     <jxrVersion>3.0.0</jxrVersion>
     <javadocPluginVersion>3.1.1</javadocPluginVersion>
 
     <plexusUtilsPluginsVersion>3.0.15</plexusUtilsPluginsVersion>
 
-    <jackson.version>2.9.10</jackson.version>
     <enunciate.docsDir/>
     <enunciate.version>2.12.0</enunciate.version>
     <enunciate.debug>false</enunciate.debug>
