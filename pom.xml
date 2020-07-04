@@ -108,16 +108,18 @@
 
 
     <!-- java ee APIs -->
-    <javax.annotation.version>1.3.2</javax.annotation.version>
-    <javax.transaction.version>1.3</javax.transaction.version>
-    <javax.inject.version>1</javax.inject.version>
-    <javax.persistence.version>2.2</javax.persistence.version>
-    <javax.mail.version>1.4.7</javax.mail.version>
-    <javax.jaxb.version>2.3.1</javax.jaxb.version>
-    <javax.activation.version>1.1.1</javax.activation.version>
-    <javax.servlet.version>4.0.1</javax.servlet.version>
-    <javax.jaxrs.version>2.0</javax.jaxrs.version>
-    <javax.validation.version>2.0.1.Final</javax.validation.version>
+    <jakarta.ws.rs.version>2.1.6</jakarta.ws.rs.version>
+    <jakarta.inject.version>1.0</jakarta.inject.version>
+    <jakarta.transaction.version>1.3.3</jakarta.transaction.version>
+    <jakarta.persistence.version>2.2.3</jakarta.persistence.version>
+    <jakarta.annotation.version>1.3.5</jakarta.annotation.version>
+    <jakarta.json.bind.version>1.0.2</jakarta.json.bind.version>
+    <jakarta.xml.bind.version>2.3.3</jakarta.xml.bind.version>
+    <jakarta.validation.version>2.0.2</jakarta.validation.version>
+    <jakarta.activation.version>1.2.2</jakarta.activation.version>
+    <jakarta.mail.version>1.6.5</jakarta.mail.version>
+    <jakarta.servlet.version>4.0.4</jakarta.servlet.version>
+    <jakarta.enterprise.cdi.version>2.0.2</jakarta.enterprise.cdi.version>
 
     <xmlunit.version>2.6.3</xmlunit.version>
 
