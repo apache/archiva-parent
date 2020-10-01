@@ -81,7 +81,7 @@
     <jetty.version>9.4.30.v20200611</jetty.version>
     <slf4j.version>1.7.28</slf4j.version>
     <log4j.version>2.13.3</log4j.version>
-    <spring.version>5.2.7.RELEASE</spring.version>
+    <spring.version>5.2.9.RELEASE</spring.version>
 
     <ehcache.version>2.10.6</ehcache.version>
     <hsqldb.version>2.5.0</hsqldb.version>
@@ -1055,7 +1055,7 @@
                 <outputFileName>openapi</outputFileName>
                 <outputPath>${project.build.directory}/generated</outputPath>
                 <outputFormat>JSONANDYAML</outputFormat>
-                <prettyPrint>TRUE</prettyPrint>
+                <prettyPrint>true</prettyPrint>
                 <configurationFilePath>${project.basedir}/src/main/resources/openapi-configuration.yaml</configurationFilePath>
               </configuration>
               <executions>
