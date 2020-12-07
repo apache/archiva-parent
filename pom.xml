@@ -78,7 +78,7 @@
     <scmPublishBranch>asf-staging-3.0</scmPublishBranch>
     <scmPubCheckoutDirectory>.site-content</scmPubCheckoutDirectory>
 
-    <jetty.version>9.4.30.v20200611</jetty.version>
+    <jetty.version>9.4.35.v20201120</jetty.version>
     <slf4j.version>1.7.28</slf4j.version>
     <log4j.version>2.13.3</log4j.version>
     <spring.version>5.2.9.RELEASE</spring.version>
