@@ -1010,7 +1010,7 @@
       <id>swagger</id>
       <activation>
         <file>
-          <exists>${basedir}/src/main/resources/openapi-configuration.yaml</exists>
+          <exists>${basedir}/src/main/resources/openapi-codegen-ignore</exists>
         </file>
       </activation>
 
@@ -1052,11 +1052,11 @@
               <artifactId>swagger-maven-plugin</artifactId>
               <version>${swagger.plugin.version}</version>
               <configuration>
-                <outputFileName>openapi</outputFileName>
+                <outputFileName>${openapi.prefix}-openapi</outputFileName>
                 <outputPath>${project.build.directory}/generated</outputPath>
                 <outputFormat>JSONANDYAML</outputFormat>
                 <prettyPrint>true</prettyPrint>
-                <configurationFilePath>${project.basedir}/src/main/resources/openapi-configuration.yaml</configurationFilePath>
+                <configurationFilePath>${openapi.config.file}</configurationFilePath>
               </configuration>
               <executions>
                 <execution>
@@ -1079,9 +1079,9 @@
                     <goal>generate</goal>
                   </goals>
                   <configuration>
-                    <inputSpec>${project.build.directory}/generated/openapi.yaml</inputSpec>
+                    <inputSpec>${project.build.directory}/generated/${openapi.prefix}-openapi.yaml</inputSpec>
                     <language>html</language>
-                    <output>${project.build.directory}/generated-sources</output>
+                    <output>${project.build.directory}/generated-sources/${openapi.prefix}</output>
                     <ignoreFileOverride>${project.basedir}/src/main/resources/openapi-codegen-ignore
                     </ignoreFileOverride>
                     <templateDirectory>${project.basedir}/src/main/resources/templates</templateDirectory>
