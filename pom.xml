@@ -138,7 +138,7 @@
     <plexusUtilsPluginsVersion>3.0.15</plexusUtilsPluginsVersion>
 
     <swagger.plugin.version>2.1.2</swagger.plugin.version>
-    <swagger.codegen.plugin.version>3.0.20</swagger.codegen.plugin.version>
+    <swagger.codegen.plugin.version>3.0.24</swagger.codegen.plugin.version>
     <io.swagger.version>2.1.2</io.swagger.version>
 
 
