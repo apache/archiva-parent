@@ -100,7 +100,7 @@
     <commons.text.version>1.8</commons.text.version>
     <commons.beanutils.version>1.9.4</commons.beanutils.version>
     <commons.logging.version>1.2</commons.logging.version>
-    <commons.io.version>2.6</commons.io.version>
+    <commons.io.version>2.8.0</commons.io.version>
     <commons.digester.version>2.1</commons.digester.version>
     <commons.collections.version>4.4</commons.collections.version>
     <commons.fileupload.version>1.4</commons.fileupload.version>
