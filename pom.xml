@@ -78,7 +78,7 @@
     <scmPublishBranch>asf-staging-3.0</scmPublishBranch>
     <scmPubCheckoutDirectory>.site-content</scmPubCheckoutDirectory>
 
-    <jetty.version>9.4.41.v20210516</jetty.version>
+    <jetty.version>9.4.43.v20210629</jetty.version>
     <slf4j.version>1.7.28</slf4j.version>
     <log4j.version>2.13.3</log4j.version>
     <spring.version>5.3.7</spring.version>
@@ -86,7 +86,7 @@
     <ehcache.version>2.10.6</ehcache.version>
     <hsqldb.version>2.5.0</hsqldb.version>
     <openjpa.version>3.1.1</openjpa.version>
-    <cxf.version>3.3.10</cxf.version>
+    <cxf.version>3.3.11</cxf.version>
     <jackson.version>2.11.0</jackson.version>
 
 
