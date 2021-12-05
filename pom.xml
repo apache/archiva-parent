@@ -25,7 +25,7 @@
   <parent>
     <groupId>org.apache</groupId>
     <artifactId>apache</artifactId>
-    <version>9</version>
+    <version>24</version>
     <relativePath/>
   </parent>
 
@@ -58,6 +58,7 @@
   </distributionManagement>
 
   <properties>
+    <project.build.outputTimestamp>2022-01-01T00:00:00Z</project.build.outputTimestamp>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <snapshotsDeployUrl>https://archiva-repository.apache.org/archiva/repository/snapshots</snapshotsDeployUrl>
     <snapshotsDeployId>archiva-repository.snapshots</snapshotsDeployId>
