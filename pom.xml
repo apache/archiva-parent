@@ -857,7 +857,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-scm-publish-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.1.0</version>
           <configuration>
             <checkinComment>Apache Archiva Main site deployment</checkinComment>
             <skipDeletedFiles>${scmSkipDeletedFiles}</skipDeletedFiles>
