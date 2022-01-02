@@ -1,0 +1,6 @@
+github:
+  description: "Archiva Parent Pom Project"
+  homepage: https://archiva.apache.org
+  labels:
+    - apache
+    - archiva
