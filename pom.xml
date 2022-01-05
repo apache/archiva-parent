@@ -82,7 +82,7 @@
     <jetty.version>9.4.43.v20210629</jetty.version>
     <slf4j.version>1.7.32</slf4j.version>
     <log4j.version>2.17.1</log4j.version>
-    <spring.version>5.3.7</spring.version>
+    <spring.version>5.3.14</spring.version>
 
     <ehcache.version>2.10.6</ehcache.version>
     <hsqldb.version>2.5.0</hsqldb.version>
@@ -95,14 +95,14 @@
     <apacheds.shared.version>0.9.7</apacheds.shared.version>
 
     <!-- apache commons -->
-    <commons.lang3.version>3.9</commons.lang3.version>
+    <commons.lang3.version>3.12.0</commons.lang3.version>
     <commons.codec.version>1.13</commons.codec.version>
     <commons.configuration.version>2.7</commons.configuration.version>
-    <commons.text.version>1.8</commons.text.version>
+    <commons.text.version>1.9</commons.text.version>
     <commons.beanutils.version>1.9.4</commons.beanutils.version>
     <commons.logging.version>1.2</commons.logging.version>
     <commons.io.version>2.8.0</commons.io.version>
-    <commons.digester.version>2.1</commons.digester.version>
+    <commons.digester.version>2.15</commons.digester.version>
     <commons.collections.version>4.4</commons.collections.version>
     <commons.fileupload.version>1.4</commons.fileupload.version>
     <commons.collections.3.version>3.2.2</commons.collections.3.version>
