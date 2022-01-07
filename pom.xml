@@ -151,10 +151,10 @@
     <enunciate.version>2.13.3</enunciate.version>
     <enunciate.debug>false</enunciate.debug>
 
-    <javaVersion>8</javaVersion>
-    <javaFullVersion>1.${javaVersion}.0</javaFullVersion>
-    <compiler.source>1.${javaVersion}</compiler.source>
-    <compiler.target>1.${javaVersion}</compiler.target>
+    <javaVersion>17</javaVersion>
+    <javaFullVersion>${javaVersion}.0</javaFullVersion>
+    <compiler.source>${javaVersion}</compiler.source>
+    <compiler.target>${javaVersion}</compiler.target>
 
 
     <quartz.version>2.3.2</quartz.version>
