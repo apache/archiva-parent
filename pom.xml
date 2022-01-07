@@ -99,6 +99,7 @@
     <commons.codec.version>1.15</commons.codec.version>
     <commons.configuration.version>2.7</commons.configuration.version>
     <commons.text.version>1.9</commons.text.version>
+    <!-- Beanutil is a transient dependency of commons configuration2, beanutils version depends on it  -->
     <commons.beanutils.version>1.9.4</commons.beanutils.version>
     <commons.logging.version>1.2</commons.logging.version>
     <commons.io.version>2.11.0</commons.io.version>
