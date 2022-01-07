@@ -31,7 +31,7 @@
 
   <groupId>org.apache.archiva</groupId>
   <artifactId>archiva-parent</artifactId>
-  <version>19-SNAPSHOT</version>
+  <version>19.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Archiva Common Parent Project</name>
@@ -79,10 +79,10 @@
     <scmPublishBranch>asf-staging-3.0</scmPublishBranch>
     <scmPubCheckoutDirectory>.site-content</scmPubCheckoutDirectory>
 
-    <jetty.version>9.4.43.v20210629</jetty.version>
+    <jetty.version>11.0.7</jetty.version>
     <slf4j.version>1.7.32</slf4j.version>
     <log4j.version>2.17.1</log4j.version>
-    <spring.version>5.3.14</spring.version>
+    <spring.version>6.0.0-M1</spring.version>
 
     <ehcache.version>3.9.9</ehcache.version>
     <hsqldb.version>2.5.0</hsqldb.version>
@@ -109,18 +109,19 @@
 
 
     <!-- java ee APIs -->
-    <jakarta.ws.rs.version>2.1.6</jakarta.ws.rs.version>
-    <jakarta.inject.version>1.0</jakarta.inject.version>
-    <jakarta.transaction.version>1.3.3</jakarta.transaction.version>
-    <jakarta.persistence.version>2.2.3</jakarta.persistence.version>
-    <jakarta.annotation.version>1.3.5</jakarta.annotation.version>
-    <jakarta.json.bind.version>1.0.2</jakarta.json.bind.version>
-    <jakarta.xml.bind.version>2.3.3</jakarta.xml.bind.version>
-    <jakarta.validation.version>2.0.2</jakarta.validation.version>
-    <jakarta.activation.version>1.2.2</jakarta.activation.version>
-    <jakarta.mail.version>1.6.5</jakarta.mail.version>
-    <jakarta.servlet.version>4.0.4</jakarta.servlet.version>
-    <jakarta.enterprise.cdi.version>2.0.2</jakarta.enterprise.cdi.version>
+    <jakarta.ws.rs.version>3.0.0</jakarta.ws.rs.version>
+    <jakarta.inject.version>2.0.0</jakarta.inject.version>
+    <jakarta.transaction.version>2.0.0</jakarta.transaction.version>
+    <jakarta.persistence.version>3.0.0</jakarta.persistence.version>
+    <jakarta.annotation.version>2.0.0</jakarta.annotation.version>
+    <jakarta.json.bind.version>2.0.0</jakarta.json.bind.version>
+    <jakarta.json-api.version>2.0.1</jakarta.json-api.version>
+    <jakarta.xml.bind.version>3.0.1</jakarta.xml.bind.version>
+    <jakarta.validation.version>3.0.0</jakarta.validation.version>
+    <jakarta.activation.version>2.0.1</jakarta.activation.version>
+    <jakarta.mail.version>2.0.1</jakarta.mail.version>
+    <jakarta.servlet.version>5.0.0</jakarta.servlet.version>
+    <jakarta.enterprise.cdi.version>3.0.0</jakarta.enterprise.cdi.version>
 
     <xmlunit.version>2.8.4</xmlunit.version>
     <mockito.version>3.4.0</mockito.version>
