@@ -135,7 +135,7 @@
     <maven-project-info-reports-plugin.version>3.1.0</maven-project-info-reports-plugin.version>
     <checkstyleVersion>3.1.2</checkstyleVersion>
     <jxrVersion>3.0.0</jxrVersion>
-    <javadocPluginVersion>3.3.1</javadocPluginVersion>
+    <javadocPluginVersion>3.3.2</javadocPluginVersion>
 
     <plexusUtilsPluginsVersion>3.0.15</plexusUtilsPluginsVersion>
 
