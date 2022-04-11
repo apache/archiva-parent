@@ -147,7 +147,7 @@
 
 
     <enunciate.docsDir/>
-    <enunciate.version>2.13.3</enunciate.version>
+    <enunciate.version>2.14.0</enunciate.version>
     <enunciate.debug>false</enunciate.debug>
 
     <javaVersion>8</javaVersion>
