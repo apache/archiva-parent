@@ -164,8 +164,8 @@
 
 
   <scm>
-    <connection>scm:git:https://gitbox.apache.org/repos/asf/archiva-parent.git</connection>
-    <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/archiva-parent.git</developerConnection>
+    <connection>scm:git:https://github.com/apache/archiva-parent</connection>
+    <developerConnection>scm:git:https://github.com/apache/archiva-parent</developerConnection>
     <url>https://github.com/apache/archiva-parent</url>
   </scm>
 
