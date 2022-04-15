@@ -68,7 +68,7 @@
     <gpg.useagent>true</gpg.useagent>
 
     <surefireVersion>3.0.0-M6</surefireVersion>
-    <sonar.plugin.version>2.5</sonar.plugin.version>
+    <sonar.plugin.version>2.7.1</sonar.plugin.version>
 
     <!-- archiva components version -->
     <archiva.comp.version>3.0-SNAPSHOT</archiva.comp.version>
