@@ -158,7 +158,7 @@
 
     <quartz.version>2.3.2</quartz.version>
 
-    <asciidoctor.maven.plugin.version>2.0.0-RC.1</asciidoctor.maven.plugin.version>
+    <asciidoctor.maven.plugin.version>2.2.2</asciidoctor.maven.plugin.version>
 
   </properties>
 
