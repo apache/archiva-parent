@@ -22,45 +22,37 @@
   <!-- TODO: inherited publish, banner, skin -->
   <bannerLeft>
     <name>Apache Archiva</name>
-    <src>http://archiva.apache.org/images/archiva.png</src>
+    <src>https://archiva.apache.org/images/archiva.png</src>
     <!-- have to add the index.html to get the right location, due to bug in Doxia. Still not correct for subdirectories though -->
-    <href>http://archiva.apache.org/index.html</href>
+    <href>https://archiva.apache.org/index.html</href>
   </bannerLeft>
 
   <bannerRight>
     <name>Apache Software Foundation</name>
     <src>https://www.apache.org/images/asf_logo_wide_2016.png</src>
-    <href>http://www.apache.org/</href>
+    <href>https://www.apache.org/</href>
   </bannerRight>
   <publishDate format="dd MMM yyyy" position="right" />
   <version position="none" />
   <skin>
     <groupId>org.apache.maven.skins</groupId>
     <artifactId>maven-fluido-skin</artifactId>
-    <version>1.10.0</version>
+    <version>1.11.0-SNAPSHOT</version>
   </skin>
 
-  <body>
+  <custom>
+    <matomo>
+      <siteId>10</siteId>
+      <url>https://analytics.apache.org</url>
+      <options>
+        <disableCookies/>
+        <trackPageView/>
+        <enableLinkTracking/>
+      </options>
+    </matomo>
+  </custom>
 
-    <head>
-      <![CDATA[<!-- Matomo -->
-<script>
-  var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  /* We explicitly disable cookie tracking to avoid privacy issues */
-  _paq.push(['disableCookies']);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//analytics.apache.org/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '10']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Matomo Code -->]]>
-    </head>
+  <body>
 
     <menu ref="reports" inherit="bottom"/>
   </body>
