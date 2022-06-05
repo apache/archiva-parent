@@ -637,6 +637,17 @@
               </rules>
             </configuration>
           </execution>
+          <execution>
+            <id>enforce-upper-bounds</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireUpperBoundDeps/>
+              </rules>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
